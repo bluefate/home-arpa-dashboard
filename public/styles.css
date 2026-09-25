@@ -559,6 +559,23 @@ html[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
   border-color: var(--line);
 }
 
+.btn-danger {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 0.55rem;
+  padding: 0.55rem 0.95rem;
+  cursor: pointer;
+  color: #fff;
+  background: #c23b3b;
+  border: 1px solid #c23b3b;
+}
+
+.btn-sm {
+  font-size: 0.82rem;
+  padding: 0.35rem 0.65rem;
+}
+
 .form-msg {
   margin: 0;
   font-size: 0.88rem;
@@ -598,6 +615,13 @@ html[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
   font-size: 0.82rem;
   color: var(--muted);
   word-break: break-all;
+}
+
+.manage-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .manage-cat select {
