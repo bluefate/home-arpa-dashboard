@@ -130,12 +130,26 @@ export function renderCategorySections(services, groupsEl, { zone, probe = true 
 }
 
 export function getStoredApiKey() {
-  return sessionStorage.getItem(API_KEY_STORAGE) || "";
+  // Prefer localStorage so the key survives tab/browser restarts (admin UX).
+  // Fall back to legacy sessionStorage and migrate once found.
+  const fromLocal = localStorage.getItem(API_KEY_STORAGE) || "";
+  if (fromLocal) return fromLocal;
+  const fromSession = sessionStorage.getItem(API_KEY_STORAGE) || "";
+  if (fromSession) {
+    localStorage.setItem(API_KEY_STORAGE, fromSession);
+    sessionStorage.removeItem(API_KEY_STORAGE);
+  }
+  return fromSession;
 }
 
 export function setStoredApiKey(key) {
-  if (key) sessionStorage.setItem(API_KEY_STORAGE, key);
-  else sessionStorage.removeItem(API_KEY_STORAGE);
+  if (key) {
+    localStorage.setItem(API_KEY_STORAGE, key);
+    sessionStorage.removeItem(API_KEY_STORAGE);
+  } else {
+    localStorage.removeItem(API_KEY_STORAGE);
+    sessionStorage.removeItem(API_KEY_STORAGE);
+  }
 }
 
 export async function apiFetch(path, { method = "GET", body, apiKey } = {}) {

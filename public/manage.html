@@ -50,7 +50,7 @@
     <main class="content">
       <div class="page-head">
         <h1>Manage</h1>
-        <p class="lede">Move services between categories on demand. Category is the dashboard <code>group</code> field. Moving to <strong>Paused</strong> marks the service paused.</p>
+        <p class="lede">Edit or delete entries, or move categories. Category is the dashboard <code>group</code> field. Moving to <strong>Paused</strong> marks the service paused. Delete asks twice.</p>
       </div>
 
       <section class="form-panel">
@@ -82,10 +82,11 @@
 
       <section class="form-panel" aria-label="Register any zone">
         <div class="status-head">
-          <h2>Register or update (any zone)</h2>
-          <p>Same as <code>POST /api/services</code>. For day-to-day WIP, prefer <a href="/dev.html">dev.home.arpa</a>.</p>
+          <h2 id="reg-heading">Register (any zone)</h2>
+          <p id="reg-hint">Same as <code>POST /api/services</code>. For day-to-day WIP, prefer <a href="/dev.html">dev.home.arpa</a>. Use <strong>Edit</strong> on a row to change an existing entry.</p>
         </div>
         <form id="reg-form" class="service-form">
+          <input type="hidden" id="edit-id" value="" />
           <label class="field">
             <span>Name</span>
             <input type="text" name="name" required pattern="[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?" maxlength="63" />
@@ -119,7 +120,8 @@
             <span>Paused</span>
           </label>
           <div class="form-actions">
-            <button type="submit" class="btn-primary">Save</button>
+            <button type="submit" class="btn-primary" id="reg-submit">Save</button>
+            <button type="button" class="btn-secondary" id="reg-cancel" hidden>Cancel edit</button>
             <p class="form-msg" id="reg-msg" hidden></p>
           </div>
         </form>
