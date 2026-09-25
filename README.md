@@ -193,8 +193,34 @@ All mutating routes require `Authorization: Bearer <API_KEY>`.
 
 ## Docker
 
+Published image (no repo on the host):
+
 ```bash
-docker compose up -d --build
+mkdir arpa-dashboard && cd arpa-dashboard
+curl -fsSL -o docker-compose.yml \
+  https://raw.githubusercontent.com/bluefate/home-arpa-dashboard/main/docker-compose.yml
+curl -fsSL -o .env.example \
+  https://raw.githubusercontent.com/bluefate/home-arpa-dashboard/main/.env.example
+cp .env.example .env
+# edit .env — set API_KEY, CADDY_IP, optional Pi-hole / Caddy
+mkdir -p data
+docker compose up -d
+```
+
+Image: `ghcr.io/bluefate/home-arpa-dashboard:latest` (built on every push to `main`).
+
+Update later:
+
+```bash
+docker compose pull && docker compose up -d
+```
+
+If GHCR shows the package as private, make it public under **Packages**, or `docker login ghcr.io` once.
+
+Local build from a clone (optional):
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.build.yml up -d --build
 ```
 
 Bind-mount `./data` and optionally a Caddy snippet path so the proxy can import generated routes.
