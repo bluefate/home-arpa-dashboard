@@ -9,7 +9,7 @@
   "homepage": "https://bluefatelabs.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bluefate/ArpaDashboard.git"
+    "url": "https://github.com/bluefate/home-arpa-dashboard.git"
   },
   "engines": {
     "node": ">=20"

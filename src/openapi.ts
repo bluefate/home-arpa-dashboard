@@ -1,6 +1,6 @@
 import { config } from "./config.js";
 
-/** OpenAPI 3.1 description of the ArpaDashboard HTTP API. */
+/** OpenAPI 3.1 description of the HomeArpaDashboard HTTP API. */
 export function buildOpenApiDocument() {
   const accentEnum = ["purple", "blue", "teal", "pink", "red", "green", "dark"];
 
@@ -92,7 +92,7 @@ export function buildOpenApiDocument() {
   return {
     openapi: "3.1.0",
     info: {
-      title: "ArpaDashboard API",
+      title: "HomeArpaDashboard API",
       version: "0.1.0",
       description:
         "Register and manage `home.arpa` / `dev.home.arpa` services. " +
@@ -104,13 +104,13 @@ export function buildOpenApiDocument() {
       },
       license: {
         name: "MIT",
-        url: "https://github.com/bluefate/ArpaDashboard/blob/main/LICENSE",
+        url: "https://github.com/bluefate/home-arpa-dashboard/blob/main/LICENSE",
       },
     },
     servers: [
       {
         url: "/api",
-        description: "This ArpaDashboard instance",
+        description: "This HomeArpaDashboard instance",
       },
     ],
     tags: [

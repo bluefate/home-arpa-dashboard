@@ -1,4 +1,4 @@
-# ArpaDashboard
+# HomeArpaDashboard
 
 A small home-lab control panel for naming and publishing internal services under [`home.arpa`](https://www.rfc-editor.org/rfc/rfc8375.html) (RFC 8375)—the reserved domain for residential networks.
 
@@ -8,7 +8,7 @@ A small home-lab control panel for naming and publishing internal services under
 
 Home labs grow messy fast: containers on a NAS, Pi-hole on a Raspberry Pi, apps on a laptop, each with a different IP and port. Remembering `http://192.168.x.x:3333` does not scale, and hand-editing DNS plus reverse-proxy config for every new service is easy to get wrong.
 
-**ArpaDashboard** gives you one place to:
+**HomeArpaDashboard** gives you one place to:
 
 1. **See what’s running** — a browser dashboard of your lab services, grouped however you like (business apps, git, NAS UIs, WIP projects, and so on).
 2. **Register a service with an API** — send a protected request with a name, zone, IP, and port instead of editing Pi-hole and Caddy by hand.
@@ -67,7 +67,7 @@ flowchart TB
 
   subgraph published ["Published services"]
     direction LR
-    Dash["ArpaDashboard UI"]
+    Dash["HomeArpaDashboard UI"]
     Labs["NAS / Pi / laptop apps"]
   end
 
@@ -256,7 +256,7 @@ While the API is still running, `DELETE /api/services/:id` (with your `API_KEY`)
 
 ### Reverse proxy / portal
 
-- Remove any Caddy `reverse_proxy` or `import` added for ArpaDashboard or generated hostnames; reload Caddy.
+- Remove any Caddy `reverse_proxy` or `import` added for HomeArpaDashboard or generated hostnames; reload Caddy.
 - If `home.home.arpa` pointed at this app, restore your previous upstream (e.g. static `file_server`).
 - Delete the file at `CADDY_SNIPPET_PATH` if you used snippet mode.
 
@@ -270,13 +270,13 @@ While the API is still running, `DELETE /api/services/:id` (with your `API_KEY`)
 
 ## Security
 
-- Keep ArpaDashboard on your LAN (or VPN). Do not expose it to the public internet.
+- Keep HomeArpaDashboard on your LAN (or VPN). Do not expose it to the public internet.
 - Generate a long random `API_KEY` (`openssl rand -base64 32`) and keep it only in `.env`.
 - `home.arpa` is for internal networks only; do not request public ACME certs for it. Use Caddy’s internal CA (or your own) and trust it on clients.
 
 ## Thanks
 
-If ArpaDashboard helped your lab, you can [buy me a coffee](https://buy.stripe.com/14A00lalU1ZS0tMauI5gc00).
+If HomeArpaDashboard helped your lab, you can [buy me a coffee](https://buy.stripe.com/14A00lalU1ZS0tMauI5gc00).
 
 Built by [BlueFate Labs](https://bluefatelabs.com/) — software engineering & applied AI.
 

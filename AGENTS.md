@@ -1,8 +1,8 @@
-# Agent guide — ArpaDashboard
+# Agent guide — HomeArpaDashboard
 
 This file is for coding agents and humans automating home-lab service registration.
 
-ArpaDashboard is a **private LAN** tool. Do not expose it to the public internet. Never commit `API_KEY`, `.env`, or real LAN secrets into git.
+HomeArpaDashboard is a **private LAN** tool. Do not expose it to the public internet. Never commit `API_KEY`, `.env`, or real LAN secrets into git.
 
 ## Goal (local / WIP app)
 
@@ -16,7 +16,7 @@ https://<name>.dev.home.arpa
 
 ## Prerequisites
 
-1. ArpaDashboard is running (`BASE`, e.g. `https://home.home.arpa`).
+1. HomeArpaDashboard is running (`BASE`, e.g. `https://home.home.arpa`).
 2. You have `API_KEY` (Bearer). You do **not** need the Pi-hole password — that is operator-only in server env.
 3. App listens on a **LAN IP** (not `127.0.0.1`) and a known **port**.
 
