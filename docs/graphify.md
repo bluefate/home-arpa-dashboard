@@ -1,6 +1,6 @@
 # Graphify
 
-Local knowledge graph for ArpaDashboard. Agents use it before exploring or changing code. Output lives in `graphify-out/` (gitignored — regenerate on each machine).
+Local knowledge graph for HomeArpaDashboard. Agents use it before exploring or changing code. Output lives in `graphify-out/` (gitignored — regenerate on each machine).
 
 This setup follows the BluefateLabs Graphify guide: https://github.com/BluefateLabs/bluefatelabs/blob/main/docs/graphify.md
 
@@ -60,7 +60,7 @@ When starting work in Cursor, Codex, Devin, or similar, include something like:
 
 Prefer `graphify query`, `graphify path`, and `graphify explain` over blind grep/read. See `.cursor/rules/graphify.mdc`.
 
-Useful ArpaDashboard questions:
+Useful HomeArpaDashboard questions:
 
 - What path does a `POST /api/services` request take from validation to persistence?
 - Which modules can update Pi-hole or Caddy state?
@@ -99,8 +99,8 @@ That covers the whole output tree, including:
 
 Do not add `graphify-out/` to a Cursor ignore file — agents need to read `graph.json` and related outputs.
 
-## ArpaDashboard notes
+## HomeArpaDashboard notes
 
-ArpaDashboard is a private LAN tool. Never commit `.env`, `API_KEY`, Pi-hole credentials, real LAN IPs, or generated reports containing private lab details.
+HomeArpaDashboard is a private LAN tool. Never commit `.env`, `API_KEY`, Pi-hole credentials, real LAN IPs, or generated reports containing private lab details.
 
 Use the graph when changing service registration, DNS automation, Caddy snippet generation, OpenAPI docs, or browser UI behavior. Treat Graphify findings as navigation aids; the code remains the source of truth.
