@@ -7,3 +7,9 @@ data/*.json
 *.log
 .vscode/
 .idea/
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+
+# Graphify knowledge graph (regenerate locally; see docs/graphify.md)
+graphify-out/
