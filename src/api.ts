@@ -44,7 +44,7 @@ api.get(
   "/docs",
   swaggerUI({
     url: "/api/openapi.json",
-    title: "ArpaDashboard API",
+    title: "HomeArpaDashboard API",
   }),
 );
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to · ArpaDashboard</title>
+  <title>How to · HomeArpaDashboard</title>
   <script>
     (function () {
       try {
@@ -23,7 +23,7 @@
         <span class="brand-mark" aria-hidden="true">⌂</span>
         <div>
           <p class="brand-name">home.arpa</p>
-          <p class="brand-sub">ArpaDashboard</p>
+          <p class="brand-sub">HomeArpaDashboard</p>
         </div>
       </div>
       <nav class="nav" aria-label="Primary">
@@ -94,7 +94,7 @@
           <li>
             <strong>Automated snippet (optional):</strong> set <code>CADDY_SNIPPET_PATH</code> to a file
             your Caddy container can read, and <code>import</code> that file from your main Caddyfile.
-            ArpaDashboard rewrites the snippet whenever services change.
+            HomeArpaDashboard rewrites the snippet whenever services change.
           </li>
           <li>
             <strong>Manual:</strong> leave <code>CADDY_SNIPPET_PATH</code> empty and add
@@ -209,7 +209,7 @@ npm run dev</code></pre>
       <article class="guide-block">
         <h2>Uninstall / remove</h2>
         <p>
-          ArpaDashboard does not ship an uninstall binary. Removal is stopping the app and
+          HomeArpaDashboard does not ship an uninstall binary. Removal is stopping the app and
           optionally cleaning the records it created. Pick how far you want to go.
         </p>
 
@@ -225,7 +225,7 @@ npm run dev</code></pre>
 rm -f .env
 rm -rf data/services.json
 # optional: remove the whole checkout
-# cd .. && rm -rf ArpaDashboard</code></pre>
+# cd .. && rm -rf HomeArpaDashboard</code></pre>
         <p>
           Deleting the app <strong>does not</strong> automatically delete Pi-hole Local DNS entries or
           Caddy routes. Those live outside this project.
@@ -249,7 +249,7 @@ curl -sS -X DELETE http://127.0.0.1:8787/api/services/SERVICE_ID \
 
         <h3>4. Reverse proxy / portal</h3>
         <ul>
-          <li>Remove any <code>reverse_proxy</code> (or <code>import</code>) you added for ArpaDashboard or generated hostnames.</li>
+          <li>Remove any <code>reverse_proxy</code> (or <code>import</code>) you added for HomeArpaDashboard or generated hostnames.</li>
           <li>If you pointed <code>home.home.arpa</code> at this app, point it back at your previous static site or another upstream, then reload Caddy.</li>
           <li>If you used <code>CADDY_SNIPPET_PATH</code>, delete that snippet file and drop its <code>import</code> from the Caddyfile.</li>
         </ul>
@@ -266,7 +266,7 @@ curl -sS -X DELETE http://127.0.0.1:8787/api/services/SERVICE_ID \
     </main>
 
     <footer class="foot">
-      <p class="foot-note">Keep ArpaDashboard on your LAN or VPN. Do not expose the API to the public internet.</p>
+      <p class="foot-note">Keep HomeArpaDashboard on your LAN or VPN. Do not expose the API to the public internet.</p>
       <a href="https://bluefatelabs.com/" target="_blank" rel="noopener noreferrer">
         <img
           class="foot-logo foot-logo-light"
@@ -284,7 +284,7 @@ curl -sS -X DELETE http://127.0.0.1:8787/api/services/SERVICE_ID \
         />
       </a>
       <p class="foot-legal">
-        ArpaDashboard is an open-source project by
+        HomeArpaDashboard is an open-source project by
         <a href="https://bluefatelabs.com/" target="_blank" rel="noopener noreferrer">BlueFate Labs</a>
         · MIT License. All trademarks, logos, and copyrights are property of their respective owners.
       </p>

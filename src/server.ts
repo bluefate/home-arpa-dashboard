@@ -23,7 +23,7 @@ app.onError((err, c) => {
 
 serve({ fetch: app.fetch, port: config.port, hostname: config.host }, (info) => {
   console.log(
-    `ArpaDashboard listening on http://${info.address}:${info.port}`,
+    `HomeArpaDashboard listening on http://${info.address}:${info.port}`,
   );
   console.log(`Zones: ${config.allowedZones.join(", ")}`);
 });
