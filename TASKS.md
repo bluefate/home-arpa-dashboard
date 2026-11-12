@@ -13,7 +13,7 @@
 
 ## Open / next
 
-- [ ] Optional `accent` on register API examples in README
+- [x] Optional `accent` on register API examples in README
 - [ ] CI for public GitHub (lint/typecheck/build) — GitHub Actions
 - [ ] Healthcheck / uptime optional field on services
 - [x] Categories UI (move services between groups) + zone-filtered pages

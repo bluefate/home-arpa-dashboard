@@ -148,7 +148,8 @@ curl -sS -X POST http://127.0.0.1:8787/api/services \
     "port": 3333,
     "title": "Shop admin",
     "group": "Development",
-    "proxy": true
+    "proxy": true,
+    "accent": "purple"
   }'
 ```
 
@@ -190,6 +191,7 @@ All mutating routes require `Authorization: Bearer <API_KEY>`.
 | `url_path` | no | e.g. `/admin/` |
 | `protocol` | no | `https` (default) or `http` |
 | `paused` | no | hide/mark inactive on dashboard |
+| `accent` | no | card color: `purple`, `blue`, `teal`, `pink`, `red`, `green`, or `dark` (default: auto) |
 
 ## Docker
 
